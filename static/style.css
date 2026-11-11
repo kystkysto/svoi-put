@@ -151,3 +151,6 @@ input[type="text"]:focus, textarea:focus { outline: none; border-color: var(--gr
 /* static (GitHub Pages) version: the questionnaire is a Yandex Form in a frame */
 .yform iframe { display: block; width: 100%; min-height: 2100px; border: 0; background: #fff; border-radius: 14px; }
 @media (max-width: 600px) { .yform iframe { min-height: 2400px; } }
+
+/* --metrika: the footer notice */
+.ym-note { font-size: 14px; color: var(--muted); }
