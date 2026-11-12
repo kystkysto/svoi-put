@@ -5,6 +5,17 @@
   var src = (p.get("src") || p.get("utm_source") || "direct").toLowerCase().slice(0, 40);
   // only our labels (the same rule as SRC_RE in server.py): no digits or dots, so no phone or name in a label
   if (!/^(direct|friend|assoc|interview|other|(ya|vk|tg)_[a-z]{2,16})$/.test(src)) src = "other";
+  // the ad group for parents whose child goes to school (?src=ya_pain): the first screen says who the pilot is for
+  if (src === "ya_pain") {
+    try {
+      var ey = document.querySelector(".hero .eyebrow"), h1 = document.querySelector(".hero h1"),
+          note = document.querySelector(".hero .note");
+      if (ey) ey.textContent = "Для родителей пятиклассников · пробный запуск";
+      if (h1) h1.textContent = "Математика в 5 классе не идёт? Тренажёр объяснит тему и проверит ответы.";
+      if (note) note.textContent = "Сервис пока в разработке. Пилот — не раньше марта 2027 года и пока только для семей на семейном обучении. " +
+        "Если ребёнок ходит в школу, пройдите анкету: так поймём, нужен ли тренажёр в дополнение к школе.";
+    } catch (e) {}
+  }
   var f = document.getElementById("yform"), a = document.getElementById("yformLink");
   if (!f) return;
   var base = f.getAttribute("data-form");
