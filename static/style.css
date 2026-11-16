@@ -148,9 +148,35 @@ input[type="text"]:focus, textarea:focus { outline: none; border-color: var(--gr
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
-/* static (GitHub Pages) version: the questionnaire is a Yandex Form in a frame */
-.yform iframe { display: block; width: 100%; min-height: 2100px; border: 0; background: #fff; border-radius: 14px; }
-@media (max-width: 600px) { .yform iframe { min-height: 2400px; } }
+/* static (GitHub Pages) version: interactive demo, comparison cards and compact Yandex Form */
+.demo-card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 26px 24px; box-shadow: 0 18px 40px -28px rgba(31, 92, 69, .35); }
+.demo-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 18px; }
+.demo-tab { background: var(--soft); color: var(--ink); border: 1.5px solid var(--line); border-radius: 999px; padding: 9px 18px; font: 600 15px/1.2 var(--sans); cursor: pointer; transition: background .15s, border-color .15s; }
+.demo-tab:hover { border-color: var(--green); }
+.demo-tab.is-active { background: var(--green); border-color: var(--green); color: #fff; }
+.demo-explain { background: #f1f7f3; border-left: 4px solid var(--green); border-radius: 0 12px 12px 0; padding: 14px 16px; margin-bottom: 18px; font-size: 16px; }
+.demo-q { font-weight: 700; margin-bottom: 12px; font-size: 17px; }
+.demo-opts { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+.demo-opt { background: #fff; color: var(--ink); border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 20px; font: 600 16px/1.2 var(--sans); cursor: pointer; }
+.demo-opt:hover { border-color: var(--green); }
+.demo-opt.is-right { background: #e6f4ec; border-color: var(--green); color: var(--green); }
+.demo-opt.is-wrong { background: #fdf1ed; border-color: var(--red); color: var(--red); }
+.demo-reply { border-radius: 12px; padding: 14px 16px; font-size: 15px; margin-bottom: 16px; background: var(--soft); border: 1px solid var(--line); }
+.demo-reply.is-right { background: #e6f4ec; border-color: #b7dec6; }
+.demo-reply.is-hint { background: #fef7e6; border-color: #ebd094; }
+.cmp-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 24px 22px; }
+.cmp-card--us { border: 2px solid var(--green); box-shadow: 0 16px 34px -26px rgba(31, 92, 69, .45); }
+.cmp-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.cmp-list li { padding: 8px 0 8px 24px; border-top: 1px dashed var(--line); position: relative; font-size: 16px; }
+.cmp-list li:first-child { border-top: 0; }
+.cmp-list li::before { position: absolute; left: 0; top: 8px; font-weight: 700; }
+.cmp-list--old li::before { content: "–"; color: var(--muted); }
+.cmp-list--us li::before { content: "✓"; color: var(--green); }
+.yform iframe { display: block; width: 100%; min-height: 1180px; border: 0; background: #fff; border-radius: 14px; }
+@media (max-width: 600px) {
+  .demo-card { padding: 20px 16px; }
+  .yform iframe { min-height: 1380px; }
+}
 
 /* --metrika: the footer notice */
 .ym-note { font-size: 14px; color: var(--muted); }
