@@ -116,6 +116,15 @@
     var v = document.getElementById("promoVideo");
     if (v && v.addEventListener) {
       v.addEventListener("play", function () { goal("video_play"); });
+      v.addEventListener("timeupdate", function () {
+        if (!v.duration || !isFinite(v.duration)) return;
+        var pct = v.currentTime / v.duration;
+        if (pct >= 0.25) goal("video_25");
+        if (pct >= 0.50) goal("video_50");
+        if (pct >= 0.75) goal("video_75");
+        if (pct >= 0.95) goal("video_100");
+      });
+      v.addEventListener("ended", function () { goal("video_100"); });
     }
     var f = document.getElementById("yform");
     if (!f) return;
