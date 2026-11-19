@@ -10,8 +10,8 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#1f5c45">
 <link rel="icon" href="static/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="static/style.css?v=2026-11-16">
-<script src="static/pages.js?v=2026-11-16" defer></script>
+<link rel="stylesheet" href="static/style.css?v=2026-11-19">
+<script src="static/pages.js?v=2026-11-19" defer></script>
 <script>
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
 for(var j=0;j<e.scripts.length;j++){if(e.scripts[j].src===r){return;}}
@@ -40,7 +40,7 @@ ym(114184940,"init",{ssr:true,webvisor:true,clickmap:true,referrer:document.refe
       <p class="lead">Персональный ИИ-наставник подстраивается под темп и интересы ребёнка: объясняет темы по всей основной программе, разбирает ошибки без готовых ответов и готовит к школьной аттестации. Освободившееся время — на спорт, кружки и жизнь. Вам вечером — короткий отчёт без роли надсмотрщика.</p>
       <div class="hero__cta">
         <a class="btn" href="#zayavka" data-cta="hero">Попробовать 2 недели бесплатно</a>
-        <a class="link" href="#demo">Попробовать на примере</a>
+        <a class="link" href="#video">Смотреть видео (1 мин)</a>
       </div>
       <p class="note">Открываем ранний доступ: 2 недели бесплатно, далее 6 900 ₽/мес за всю основную программу. Аттестацию ребёнок проходит в прикреплённой школе (в государственной — бесплатно).</p>
     </div>
@@ -58,7 +58,24 @@ ym(114184940,"init",{ssr:true,webvisor:true,clickmap:true,referrer:document.refe
   </div>
 </section>
 
-<section class="sec sec--soft" id="demo">
+<section class="sec sec--soft" id="video">
+  <div class="wrap video-wrap">
+    <h2>Как это работает — видео за 1 минуту</h2>
+    <p class="muted">Диагностика пробелов по программе ФОП, объяснения через интересы ребёнка без готовых ответов и короткий отчёт родителю вечером.</p>
+    <div class="video-frame">
+      <video id="promoVideo" controls playsinline preload="metadata" poster="static/demo-poster.jpg?v=2026-11-19">
+        <source src="static/demo-video.mp4?v=2026-11-19" type="video/mp4">
+        Ваш браузер не поддерживает встроенное видео.
+      </video>
+    </div>
+    <div class="video-foot">
+      <a class="btn btn--small" href="#zayavka" data-cta="video">Попробовать 2 недели бесплатно</a>
+      <a class="link" href="#demo">Или покликать пример самому</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="demo">
   <div class="wrap narrow">
     <h2>Как ИИ учит на самом деле — попробуйте за 15 секунд</h2>
     <p class="muted">Обычный чат просто выдаёт готовый ответ из ГДЗ. У нас ребёнок выбирает то, что ему интересно, а ИИ объясняет тему через этот мир и помогает дойти до решения самому.</p>
@@ -82,7 +99,7 @@ ym(114184940,"init",{ssr:true,webvisor:true,clickmap:true,referrer:document.refe
   </div>
 </section>
 
-<section class="sec" id="kak">
+<section class="sec sec--soft" id="kak">
   <div class="wrap">
     <h2>Как ребёнок закрывает программу за ~2 часа в день</h2>
     <ol class="steps">
@@ -94,7 +111,7 @@ ym(114184940,"init",{ssr:true,webvisor:true,clickmap:true,referrer:document.refe
   </div>
 </section>
 
-<section class="sec sec--soft">
+<section class="sec">
   <div class="wrap">
     <h2>Почему 2 часа с ИИ лучше, чем 6 часов обычной школы</h2>
     <div class="two">

@@ -113,6 +113,10 @@
       if (el.closest("#yformLink")) goal("form_link");
       if (el.closest('a[href^="mailto:"]')) goal("mailto_click");
     }, true);
+    var v = document.getElementById("promoVideo");
+    if (v && v.addEventListener) {
+      v.addEventListener("play", function () { goal("video_play"); });
+    }
     var f = document.getElementById("yform");
     if (!f) return;
     var seen = function () { goal("form_seen"); };
