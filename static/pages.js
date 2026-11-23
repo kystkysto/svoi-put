@@ -35,6 +35,42 @@
       question: "2. Теперь решите задачу сами: марсоход передал 15 из 25 снимков. Сколько процентов передано?"
     }
   };
+  var hvb = document.getElementById("heroVideoBtn");
+  var pv = document.getElementById("promoVideo");
+  if (hvb && pv) {
+    hvb.addEventListener("click", function (ev) {
+      ev.preventDefault();
+      var sec = document.getElementById("video");
+      if (sec && sec.scrollIntoView) sec.scrollIntoView({ behavior: "smooth", block: "start" });
+      try { pv.play(); } catch (e) {}
+    });
+  }
+
+  document.addEventListener("click", function (ev) {
+    var el = ev.target;
+    if (el && el.nodeType !== 1) el = el.parentElement;
+    var btn = el && el.closest ? el.closest("[data-copy-target]") : null;
+    if (!btn) return;
+    var box = document.getElementById(btn.getAttribute("data-copy-target"));
+    var pre = box ? box.querySelector("pre") : null;
+    if (!pre) return;
+    var txt = pre.textContent || "";
+    var done = function () {
+      var orig = btn.textContent;
+      btn.textContent = "✓ Скопировано!";
+      setTimeout(function () { btn.textContent = orig; }, 2200);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(done).catch(function () {});
+    } else {
+      try {
+        var ta = document.createElement("textarea");
+        ta.value = txt; document.body.appendChild(ta); ta.select();
+        document.execCommand("copy"); document.body.removeChild(ta); done();
+      } catch (e) {}
+    }
+  });
+
   var demoBox = document.getElementById("demoBox");
   if (!demoBox) return;
   var exEl = document.getElementById("demoExplain");
